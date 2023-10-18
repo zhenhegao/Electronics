@@ -78,9 +78,9 @@ module Asynchronous FIFO
               
 //****************empty full signal generation****************//
     
-    assign Full  = ((Write_Address_Gray[ADDRESS_WIDTH:ADDRESS_WIDTH-1] !== Read_Address_Gray_dly2[ADDRESS_WIDTH:ADDRESS_WIDTH-1]) &&
-                    (Write_Address_Gray[ADDRESS_WIDTH-2:0] == Read_Address_Gray_dly2[ADDRESS_WIDTH-2:0]) && (Write_Reset_Enable))? 'd1:'d0;
-    assign Empty = ((Read_Address_Gray == Write_Address_Gray_dly2) && (Read_Reset_Enable))? 'd1:'d0;   
+    assign Full  = ((Write_Address_Gray[ADDRESS_WIDTH:ADDRESS_WIDTH-1] !== Read_Address_Gray_2[ADDRESS_WIDTH:ADDRESS_WIDTH-1]) &&
+                    (Write_Address_Gray[ADDRESS_WIDTH-2:0] == Read_Address_Gray_2[ADDRESS_WIDTH-2:0]) && (Write_Reset_Enable))? 'd1:'d0;
+    assign Empty = ((Read_Address_Gray == Write_Address_Gray_2) && (Read_Reset_Enable))? 'd1:'d0;   
  
 //***********************write to fifo************************//
  
